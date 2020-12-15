@@ -1,0 +1,15 @@
+version: '3.7'
+
+services: :
+    app:
+        build:
+            context: .
+        environment:
+            - SECRET_KEY=samplesecretkey123
+            - ALLOWED_HOSTS=127.0.0.1,localhost
+    
+    Scrapyd:
+        build:
+            context: ./iCrawler/main/wallmart
+        depends_on: 
+            - app
